@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 var Schema = mongoose.Schema({
   createdAt:{
@@ -9,4 +9,4 @@ var Schema = mongoose.Schema({
   todoText: String
 });
 
-export default mongoose.model('Todo', Schema);
+module.exports = mongoose.model('Todo', Schema);

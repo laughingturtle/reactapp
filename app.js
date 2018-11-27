@@ -1,13 +1,13 @@
 // . express-server/app.js
-import express from 'express';
-import path from 'path';
-import bodyParser from 'body-parser';
-import logger from 'morgan';
-import mongoose from 'mongoose';
-import bb from 'express-busboy';
-import SourceMapSupport from 'source-map-support';
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const bb = require('express-busboy');
+const SourceMapSupport = require('source-map-support');
 
-import todoRoutes from './routes/todo.server.route';
+const todoRoutes = require('./express-server/routes/todo.server.route');
 
 const app = express();
 bb.extend(app);
@@ -31,8 +31,9 @@ const port = process.env.PORT || 3001;
 // connect to db
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/mern-todo-app', {
-  useMongoClient: true
-});
+  useNewUrlParser: true
+  }
+);
 
 SourceMapSupport.install();
 
@@ -43,7 +44,7 @@ app.get('/', (req,res) => {
 });
 
 app.use((req, res, next) => {
-  res.status(404).send('<h2 align = center>Page Not Found!</h2>')
+  res.status(404).send('<h2 align=center>Page Not Found!</h2>')
 });
 
 app.listen(port,() => {

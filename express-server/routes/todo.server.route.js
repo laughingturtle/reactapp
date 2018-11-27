@@ -1,7 +1,7 @@
 // ./express-server/routes/todo.server.route.js
-import express from 'express';
+const express = require('express');
 
-import * as todoController from '../controllers/todo.server.controller';
+const todoController = require('../controllers/todo.server.controller');
 
 const router = express.Router();
 
@@ -14,4 +14,4 @@ router.route('/:id')
   .get(todoController.getTodo)
   .delete(todoController.deleteTodo);
 
-export default router;
+module.exports = router;
