@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import logger from 'morgan';
 import mongoose from 'mongoose';
 import bb from 'express-busboy';
+import SourceMapSupport from 'source-map-support';
 
 import todoRoutes from './routes/todo.server.route';
 
@@ -32,6 +33,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/mern-todo-app', {
   useMongoClient: true
 });
+
+SourceMapSupport.install();
 
 app.use('/api', todoRoutes);
 
