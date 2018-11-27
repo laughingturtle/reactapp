@@ -1,0 +1,28 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "initiate repo for app",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laughingturtle/reactapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laughingturtle/reactapp/issues"
+  },
+  "homepage": "https://github.com/laughingturtle/reactapp#readme",
+  "dependencies": {
+    "babel-preset-es2015-node6": "^0.4.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
+    "morgan": "^1.9.1",
+    "source-map-support": "^0.5.9"
+  }
+}
